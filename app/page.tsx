@@ -1,9 +1,17 @@
-import Image from "next/image";
+import HeroSection from '@/components/HeroSection'
+import ProductCarousel from '@/components/ProductCarousel'
+import React from 'react'
 
-export default function Home() {
+const page = () => {
+
   return (
-    <div className="">
-
+    <div className='flex flex-col gap-10'>
+      <HeroSection />
+      <div className='flex flex-col gap-10 px-20'>
+        <ProductCarousel />
+      </div>
     </div>
-  );
+  )
 }
+
+export default page
