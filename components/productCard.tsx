@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
+import { useCounterStore } from '@/providers/counter-store-provider';
 
 interface ProductCardProps {
   imageUrl: string;
@@ -20,6 +21,8 @@ const ProductCard: React.FC<ProductCardProps> = ({
   price,
   productId
 }) => {
+  const { incrementCount } = useCounterStore((state) => state)
+
   return (
     <div className="w-full h-full rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 bg-white flex flex-col">
       {/* Product Image */}
@@ -50,7 +53,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
           <span className="text-xl font-bold text-gray-800">{price}</span>
           <button
             onClick={() => {
-                
+                incrementCount()
             }}
             className="bg-blue-600 text-white px-6 py-2 rounded-xl hover:bg-blue-700 transition-colors duration-300 text-sm"
           >

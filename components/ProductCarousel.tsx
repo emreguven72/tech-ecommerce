@@ -1,4 +1,4 @@
-'use client'; // Mark this as a Client Component
+'use client';
 
 import React, { useState } from 'react';
 import ProductCard from './productCard';
